@@ -1,0 +1,16 @@
+@startuml
+class EncodingModuleClient {
+    + void {static} main(String[] args)
+}
+class EncodingModule{
+    +void encodeWithFiles()
+    +void encodeBasedOnNetworkAndDatabase()
+}
+class MyDatabase{
+    -{static} int counter
+    -{static} Map<Integer, String> _data
+    +int write(String inputString)
+}
+EncodingModuleClient -- EncodingModule : use
+EncodingModule -- MyDatabase : use
+@enduml
