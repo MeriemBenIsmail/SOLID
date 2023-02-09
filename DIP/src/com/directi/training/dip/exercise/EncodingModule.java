@@ -1,5 +1,4 @@
-package com.directi.training.dip.exercice_refactored;
-
+package com.directi.training.dip.exercise;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,9 +10,8 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Base64;
 
-public class EncodingModule implements EncodingInterface
+public class EncodingModule
 {
-    @Override
     public void encodeWithFiles() throws IOException
     {
         BufferedReader reader = null;
@@ -38,7 +36,6 @@ public class EncodingModule implements EncodingInterface
         }
     }
 
-    @Override
     public void encodeBasedOnNetworkAndDatabase() throws IOException
     {
         URL url;
@@ -59,3 +56,4 @@ public class EncodingModule implements EncodingInterface
         database.write(encodedString);
     }
 }
+
