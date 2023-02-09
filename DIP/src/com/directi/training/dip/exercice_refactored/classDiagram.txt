@@ -1,0 +1,21 @@
+@startuml
+interface EncodingInterface{
+     +void encodeWithFiles()
+    +void encodeBasedOnNetworkAndDatabase()
+}
+class EncodingModuleClient {
+    + void {static} main(String[] args)
+}
+class EncodingModule{
+    +void encodeWithFiles()
+    +void encodeBasedOnNetworkAndDatabase()
+}
+class MyDatabase{
+    -{static} int counter
+    -{static} Map<Integer, String> _data
+    +int write(String inputString)
+}
+EncodingInterface <|-- EncodingModule
+EncodingModule -- MyDatabase : use
+EncodingModuleClient -- EncodingInterface : use
+@enduml
