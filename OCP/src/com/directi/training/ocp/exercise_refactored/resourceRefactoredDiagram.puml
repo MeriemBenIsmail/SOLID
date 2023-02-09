@@ -1,0 +1,18 @@
+@startuml
+abstract class Resource {
+    +abstract allocate()
+    +abstract free(int resourceId)
+    +abstract markResourceFree(int resourceId)
+    +abstract findFreeResource()
+    +abstract markResourceBusy(int resourceId)
+}
+class TimeSlot extends Resource {
+}
+class SpaceSlot extends Resource{
+}
+class ResourceAllocator {
+    +allocateResource(Resource resource)
+    +freeResource(Resource resource, int resourceId)
+}
+ResourceAllocator --> Resource
+@enduml

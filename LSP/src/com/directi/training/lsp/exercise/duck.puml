@@ -1,0 +1,22 @@
+@startuml
+class Duck {
+    +quack()
+    +swim()
+}
+class ElectronicDuck extends Duck {
+    -_on = false
+    +quack()
+    +swim()
+    +turnOn()
+    +turnOff()
+    
+}
+class Pool {
+    +run()
+    +quack(Duck... ducks)
+    +swim(Duck... ducks)
+    +main()
+}
+Pool --> Duck
+@enduml
+

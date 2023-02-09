@@ -1,0 +1,26 @@
+@startuml
+interface DuckInterface {
+    +quack()
+    +swim()
+}
+class Duck  {
+}
+class ElectronicDuck  {
+    -_on = false
+    +quack()
+    +swim()
+    +turnOn()
+    +turnOff()
+    
+}
+DuckInterface <|.. ElectronicDuck
+DuckInterface <|.. Duck
+class Pool {
+    +run()
+    +quack(DuckInterface... ducks)
+    +swim(DuckInterface... ducks)
+    +main()
+}
+Pool --> DuckInterface
+@enduml
+
