@@ -1,0 +1,46 @@
+@startuml
+interface Door{
+lock()
+unlock()
+open()
+close()
+}
+interface Proximity{
+proximityCallback()
+}
+interface TimeOut{
+timeOutCallback()
+}
+class Sensor{
+register(Proximity prox)
+boolean isPersonClose()
+}
+class SensingDoor implements Door, Proximity{
+private boolean _locked;
+private boolean _opened;
+public SensingDoor(Sensor sensor)
+lock()
+unlock()
+open()
+close()
+proximityCallback()
+}
+class Timer{
+ public void register(long timeOut, final TimeOut door)
+}
+class TimedDoor implements Door, TimeOut{
+private boolean _locked;
+private boolean _opened;
+public TimerDoor(Timer timer)
+lock()
+unlock()
+open()
+close()
+timeOutCallback()
+}
+Timer-> TimeOut
+Sensor-> Proximity
+SensingDoor -> Sensor
+TimedDoor -> Timer
+
+@enduml
